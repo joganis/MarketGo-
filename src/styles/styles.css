@@ -1,0 +1,286 @@
+:root {
+    /* Modo claro */
+    --color-background-light: #f5f5f5;
+    --color-surface-light: #ffffff;
+    --color-text-light: #333333;
+    --color-primary-light: #004fff;
+    --color-secondary-light: #f0f0f0;
+  
+    /* Modo oscuro */
+    --color-background-dark: #121212;
+    --color-surface-dark: #1f1f1f;
+    --color-text-dark: #fafafa;
+    --color-primary-dark: #2979ff;
+    --color-secondary-dark: #333333;
+  
+    /* Transiciones */
+    --transition-speed: 0.3s;
+  }
+
+  
+  /* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', Arial, sans-serif;
+  }
+  
+  /* Contenedor principal con transiciones */
+  .app-container.light {
+    --background-color: var(--color-background-light);
+    --surface-color: var(--color-surface-light);
+    --text-color: var(--color-text-light);
+    --primary-color: var(--color-primary-light);
+    --secondary-color: var(--color-secondary-light);
+  }
+  
+  .app-container.dark {
+    --background-color: var(--color-background-dark);
+    --surface-color: var(--color-surface-dark);
+    --text-color: var(--color-text-dark);
+    --primary-color: var(--color-primary-dark);
+    --secondary-color: var(--color-secondary-dark);
+  }
+  
+  /* Aplicar las variables en los elementos */
+  .app-container {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    transition: background-color var(--transition-speed) ease,
+                color var(--transition-speed) ease;
+  }
+  
+  /* Ejemplo: elementos superficiales (cards, contenedores) */
+  .card, .form-card, .list-card {
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem;
+    transition: background-color var(--transition-speed) ease;
+  }
+  
+  /* Botones */
+  button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity var(--transition-speed) ease;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+
+  /* Contenedor general del dashboard */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Para que ocupe todo el alto */
+  }
+  
+  /* Barra superior (header) */
+  .header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .header-left,
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Botón de Cerrar Sesión */
+  .btn-logout {
+    background-color: #d9534f;
+    margin-left: 1rem;
+  }
+  
+  /* Barra de búsqueda/filtros */
+  .search-bar-container {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .search-bar label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+  }
+  
+  /* Parte principal del dashboard con dos columnas */
+  .dashboard-main {
+    flex: 1;
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+  }
+  
+  /* Columnas */
+  .left-column {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .right-column {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+/* Tarjeta general para Agregar Producto */
+.form-card {
+    max-width: 400px;
+  }
+  
+  .form-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .form-card h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .form-card label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-card select,
+  .form-card input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Historial de Compras */
+  .list-card ul {
+    list-style: none;
+    margin-top: 1rem;
+  }
+  
+  .list-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .list-card li:last-child {
+    border-bottom: none;
+  }
+  
+  .product-item p {
+    margin-bottom: 0.25rem;
+  }
+  
+  .list-card h2 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+
+
+  /* Contenedor general de la pantalla de login */
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .auth-card {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 8px;
+    width: 320px;
+    text-align: center;
+  }
+  
+  .auth-card h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .auth-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .auth-buttons button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    border-radius: 4px;
+  }
+  
+  .auth-buttons button.google {
+    background: #db4437; /* Ejemplo de color Google */
+  }
+  
+  .auth-buttons button.facebook {
+    background: #1877f2; /* Ejemplo de color Facebook */
+  }
+  
+  .auth-buttons button.apple {
+    background: #000000; /* Ejemplo de color Apple */
+  }
+  
+  /* Formulario de correo y contraseña */
+  .auth-or {
+    margin: 1rem 0;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    position: relative;
+  }
+  
+  .auth-or span {
+    background-color: var(--surface-color);
+    padding: 0 0.5rem;
+  }
+  
+  .auth-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .auth-card input {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .auth-card .forgot-password {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    text-align: right;
+    color: var(--primary-color);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
